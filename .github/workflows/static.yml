@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - gh-pages
 
 jobs:
   deploy:
@@ -12,11 +12,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-        with:
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@latest_version
+        uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          BRANCH: main
+          ACCESS_TOKEN: ${{ secrets.DEYLOY_TOKEN }}
+          BRANCH: gh-pages
           FOLDER: ./
