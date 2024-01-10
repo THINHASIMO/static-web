@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - gh-pages  # Thay đổi tên nhánh nếu bạn đang sử dụng nhánh khác
+      - gh-pages
 
 jobs:
   deploy:
@@ -16,6 +16,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages  # Nhánh trang GitHub Pages
-          FOLDER: ./        # Thư mục chứa nội dung trang web
+          ACCESS_TOKEN: ${{ secrets.PAT_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: ./
