@@ -12,10 +12,11 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.4
+        uses: JamesIves/github-pages-deploy-action@latest_version
         with:
-          ACCESS_TOKEN: ${{ secrets.PAT_TOKEN }}
           BRANCH: main
           FOLDER: ./
