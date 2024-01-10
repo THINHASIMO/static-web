@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - gh-pages
 
 jobs:
   deploy:
@@ -16,5 +16,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          BRANCH: main
+          BRANCH: gh-pages
           FOLDER: ./
