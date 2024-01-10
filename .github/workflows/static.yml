@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - gh-pages
+      - main
 
 jobs:
   deploy:
@@ -17,5 +17,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           ACCESS_TOKEN: ${{ secrets.DEYLOY_TOKEN }}
-          BRANCH: gh-pages
+          BRANCH: main
           FOLDER: ./
